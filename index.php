@@ -243,36 +243,40 @@
           <div class="section-inner section-inner-blog">
             <h2 class="section-ttl">ブログ</h2><!-- /.section-ttl -->
             <div class="blog-item">
-              <div class="blog-item-img">
-                <div class="blog-category">
-                  <p>カテゴリー</p>
-                </div><!-- /.blog-category -->
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/sample01@2x.png" alt="サンプル１">
-                <div class="blog-item-content">
-                  <a href="<?php echo get_template_directory_uri(); ?>/blog-detail.html" class="blog-item-text ">Engress説明会in大阪の模様をお伝えします</a><!-- /.blog-item-text -->
-                  <p class="blog-item-date">2020-12-27</p><!-- /.blog-item-date -->
-                </div><!-- /.blog-item-content -->
-              </div><!-- /.blog-item-img -->
-              <div class="blog-item-img">
-                <div class="blog-category">
-                  <p>カテゴリー</p>
-                </div><!-- /.blog-category -->
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/sample02@2x.png" alt="サンプル２">
-                <div class="blog-item-content">
-                  <a href="<?php echo get_template_directory_uri(); ?>/blog-detail.html" class="blog-item-text">Engressもくもく会でみんなで　TOEFL学習をしませんか？</a><!-- /.blog-item-text -->
-                  <p class="blog-item-date">2020-12-01</p><!-- /.blog-item-date -->
-                </div><!-- /.blog-item-content -->
-              </div><!-- /.blog-item-img -->
-              <div class="blog-item-img">
-                <div class="blog-category">
-                  <p>カテゴリー</p>
-                </div><!-- /.blog-category -->
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/sample03@2x.png" alt="サンプル３">
-                <div class="blog-item-content">
-                  <a href="<?php echo get_template_directory_uri(); ?>/blog-detail.html" class="blog-item-text">TOEFL学習にはコーチング学習が最強である話</a><!-- /.blog-item-text -->
-                  <p class="blog-item-date">2020-11–20</p><!-- /.blog-item-date -->
-                </div><!-- /.blog-item-content -->
-              </div><!-- /.blog-item-img -->
+              <?php if (have_posts()) : ?>
+                <?php query_posts('posts_per_page=3'); ?>
+                <?php while (have_posts()) : the_post(); ?>
+                  <div class="blog-item-img">
+                    <div class="blog-category">
+                      <p>
+                        <?php
+                        $category = get_the_category();
+                        echo $category[0]->cat_name;
+                        ?>
+                      </p>
+                    </div><!-- /.blog-category -->
+                    <?php
+                    if (has_post_thumbnail()) :
+                      $id = get_post_thumbnail_id();
+                      $img = wp_get_attachment_image_src($id, 'large');
+                    else :
+                      $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
+                    endif;
+                    ?>
+                    <img src="<?php echo $img[0]; ?>" alt="">
+                    <div class="blog-item-content">
+                      <a href="<?php the_permalink(); ?>" class="blog-item-text ">
+                        <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      </a><!-- /.blog-item-text -->
+                      <p class="blog-item-date">
+                        <?php the_time(get_option('date_format')); ?>
+                      </p><!-- /.blog-item-date -->
+                    </div><!-- /.blog-item-content -->
+                  </div><!-- /.blog-item-img -->
+                <?php endwhile; ?>
+              <?php else : ?>
+                <p>記事が見つかりませんでした。</p>
+              <?php endif; ?>
             </div><!-- /.blog-item -->
           </div><!-- /.section-inner section-inner-blog -->
         </section><!-- /.section-blog -->
@@ -305,25 +309,8 @@
       </div><!-- /.section-2col -->
     </div><!-- /.section-wrapper -->
 
-    <section id="section-contact">
-      <div class="section-wrapper">
-        <div class="section-inner section-inner-contact">
-          <div class="contact-inner-form">
-            <h2 class="section-ttl">まずは無料で資料請求から</h2><!-- /.section-ttl -->
-            <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-            <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
-          </div>
-          <div class="contact-inner-tel">
-            <div class="inner-content">
-              <p class="contact-tel-text">お電話でのお問い合わせはこちら</p><!-- /.contact-tel-text -->
-              <p class="contact-tel-num">0123-456-7890</p><!-- /.contact-tel-num -->
-              <p class="contact-tel-date">平日 08:00~20:00</p><!-- /.contact-tel-date -->
-            </div><!-- /.inner-content -->
-          </div><!-- /.contact-inner-tel -->
-        </div><!-- /.section-inner section-inner-contact -->
-      </div><!-- /.section-wrapper -->
-    </section><!-- /#section-contact -->
-    <!-- //section-contact -->
+    <?php get_template_part('includes/footer_contact'); ?>
+
   </main>
   <!-- //main -->
 

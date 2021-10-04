@@ -55,89 +55,27 @@
         <h2 class="section-ttl">お知らせ一覧</h2><!-- /.section-ttl -->
         <div class="section-inner section-inner-ul-news">
           <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020-12-30
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
-          </div><!-- /.news-inner -->
-          <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020-12-20
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
-          </div><!-- /.news-inner -->
-          <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020-12-01
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
-          </div><!-- /.news-inner -->
-          <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020-11-21
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
-          </div><!-- /.news-inner -->
-          <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020–11-20
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
-          </div><!-- /.news-inner -->
-          <div class="news-inner">
-            <div class="news-content">
-              <p class="news-date">
-                2020–11-13
-              </p><!-- /.news-date -->
-              <a href="/news-detail.html" class="news-text">
-                お知らせのタイトルテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-              </a><!-- /.news-text -->
-            </div><!-- /.news-content -->
+            <?php if (have_posts()) : ?>
+              <?php while (have_posts()) : the_post(); ?>
+                <div class="news-content">
+                  <p class="news-date">
+                    <?php the_time(get_option('date_format')); ?>
+                  </p><!-- /.news-date -->
+                  <a href="/news-detail.html" class="news-text">
+                    <?php the_title(); ?>
+                  </a><!-- /.news-text -->
+                </div><!-- /.news-content -->
+              <?php endwhile; ?>
+            <?php else : ?>
+              <p>記事が見つかりませんでした</p>
+            <?php endif; ?>
           </div><!-- /.news-inner -->
         </div><!-- /.section-inner -->
       </div><!-- /.section-wrapper -->
     </section><!-- /#section-ul -->
     <!-- //section-ul -->
 
-    <section id="section-contact">
-      <div class="section-wrapper">
-        <div class="section-inner section-inner-contact">
-          <div class="contact-inner-form">
-            <h2 class="section-ttl">まずは無料で資料請求から</h2><!-- /.section-ttl -->
-            <a href="/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-            <a href="/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
-          </div>
-          <div class="contact-inner-tel">
-            <div class="inner-content">
-              <p class="contact-tel-text">お電話でのお問い合わせはこちら</p><!-- /.contact-tel-text -->
-              <p class="contact-tel-num">0123-456-7890</p><!-- /.contact-tel-num -->
-              <p class="contact-tel-date">平日 08:00~20:00</p><!-- /.contact-tel-date -->
-            </div><!-- /.inner-content -->
-          </div><!-- /.contact-inner-tel -->
-        </div><!-- /.section-inner section-inner-contact -->
-      </div><!-- /.section-wrapper -->
-    </section><!-- /#section-contact -->
-    <!-- //section-contact -->
+    <?php get_template_part('includes/footer_contact'); ?>
   </main>
   <!-- //main -->
 
