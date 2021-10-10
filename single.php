@@ -24,26 +24,11 @@
     <section class="bread-list">
       <div class="section-wrapper">
         <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="index.html">
-              <span itemprop="name" class="bread-home">ホーム</span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </li>
-
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/news.html">
-              <span itemprop="name">ブログ</span>
-            </a>
-            <meta itemprop="position" content="2" />
-          </li>
-
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/blog-detail.html">
-              <span itemprop="name"><?php echo wp_trim_words(get_the_title(), 24, "…", "UTF-8"); ?></span>
-            </a>
-            <meta itemprop="position" content="3" />
-          </li>
+          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <?php if (function_exists('bcn_display')) {
+              bcn_display();
+            } ?>
+          </div>
         </ol>
       </div><!-- /.section-wrapper -->
     </section><!-- /.bread-list -->
@@ -63,9 +48,8 @@
           </h2><!-- /.section-detail-blog-ttl -->
           <div class="blog-info">
             <div class="sns-link-inner">
-              <div class="sns-link1"><i class="fas fa-thumbs-up"></i>Like！0</div><!-- /.sns-link1 -->
-              <div class="sns-link2">Share</div><!-- /.sns-link2 -->
-              <div class="sns-link3"><i class="fab fa-twitter"></i>ツイート</div><!-- /.sns-link3 -->
+              <?php wp_social_bookmarking_light_output_e(null, get_permalink(), the_title("", "", false)); ?>
+
             </div><!-- /.sns-link-inner -->
             <p class="blog-date">
               <?php the_date(); ?>
@@ -80,9 +64,12 @@
               $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
             endif;
             ?>
-            <img src="<?php echo $img[0]; ?>" alt="">
-            <?php the_content(); ?>
+            <img class="blog-eyecatch" src="<?php echo $img[0]; ?>" alt="アイキャッチ画像">
+            <div class="content">
+              <?php the_content(); ?>
+            </div><!-- /.content -->
           <?php endwhile; ?>
+
 
           <h2 class="recommend-article">おすすめの記事</h2>
           <?php
@@ -125,7 +112,9 @@
                     <?php the_time(get_option('date_format')); ?>
                   </p><!-- /.blog-date -->
                   <p class="blog-ttl">
-                    <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                    <a href="<?php the_permalink(); ?>">
+                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                    </a>
                   </p><!-- /.blog-ttl -->
                 </div><!-- /.blog-content -->
               </div><!-- /.blog-inner -->
@@ -175,7 +164,9 @@
                   ?>
                   <img src="<?php echo $img[0]; ?>" alt="アイキャッチ画像">
                   <p>
-                    <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                    <a href="<?php the_permalink(); ?>">
+                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                    </a>
                   </p>
                 </div><!-- /.related-article-inner -->
               <?php endwhile; ?>

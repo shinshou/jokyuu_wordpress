@@ -32,19 +32,11 @@
     <section class="bread-list">
       <div class="section-wrapper">
         <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="index.html">
-              <span itemprop="name" class="bread-home">ホーム</span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </li>
-
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/price-list.html">
-              <span itemprop="name">料金体系</span>
-            </a>
-            <meta itemprop="position" content="2" />
-          </li>
+          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <?php if (function_exists('bcn_display')) {
+              bcn_display();
+            } ?>
+          </div>
         </ol>
       </div><!-- /.section-wrapper -->
     </section><!-- /.bread-list -->
@@ -83,9 +75,9 @@
               <p class="price">59,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="./asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="./asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="./asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->
@@ -97,10 +89,10 @@
               <p class="price">75,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="./asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="./asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="./asset/check.png" alt="check">週一回のビデオMTG</li>
-                <li><img src="./asset/check.png" alt="check">月二回の模試（解説 付き）</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->
@@ -112,11 +104,11 @@
               <p class="price">95,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="./asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="./asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="./asset/check.png" alt="check">週一回のビデオMTG</li>
-                <li><img src="./asset/check.png" alt="check">月二回の模試（解説 付き）</li>
-                <li><img src="./asset/check.png" alt="check">週一の英語面接対策</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
+                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一の英語面接対策</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->

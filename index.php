@@ -295,7 +295,7 @@
                       <?php the_time(get_option('date_format')); ?>
                     </p><!-- /.news-item-date -->
                     <a href="<?php the_permalink(); ?>" class="news-item-text">
-                      <?php the_title(); ?>
+                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
                     </a><!-- /.news-item-text -->
                   </div><!-- /.news-item-inner -->
                 <?php endwhile; ?>

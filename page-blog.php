@@ -24,7 +24,7 @@
     <!-- key-visual -->
     <div class="kv-ul-wrapper ul-blog">
       <div class="kv-ul-content">
-        <p class="kv-ul-copy"><?php wp_title(''); ?></p><!-- /.kv-ul-copy -->
+        <p class="kv-ul-copy">ブログ</p><!-- /.kv-ul-copy -->
       </div><!-- /.kv-ul-content -->
     </div><!-- /.kv-ul-wrapper -->
     <!-- //key-visual -->
@@ -46,8 +46,15 @@
       <div class="section-wrapper">
         <h2 class="section-ttl">新着一覧</h2><!-- /.section-ttl -->
         <div class="section-inner section-inner-ul-blog">
-          <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+          <?php
+          $wp_query = new WP_Query();
+          $my_posts = array(
+            'post_type' => 'post', //カテゴリは特定せず
+            'posts_per_page' => '10', //とりあえず100件
+          );
+          $wp_query->query($my_posts);
+          if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+          ?>
               <div class="blog-inner">
                 <div class="blog-img">
                   <div class="blog-category">
@@ -87,8 +94,9 @@
             <?php endwhile; ?>
             <?php next_posts_link(); ?>
           <?php else : ?>
-            <p>記事が見つかりませんでした。</p>
+            <p>記事が見つかりませんでした</p>
           <?php endif; ?>
+          <?php wp_reset_postdata(); ?>
         </div><!-- /.section-inner -->
       </div><!-- /.section-wrapper -->
     </section><!-- /#section-ul -->

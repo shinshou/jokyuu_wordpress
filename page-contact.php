@@ -32,19 +32,11 @@
     <section class="bread-list">
       <div class="section-wrapper">
         <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="index.html">
-              <span itemprop="name" class="bread-home">ホーム</span>
-            </a>
-            <meta itemprop="position" content="1" />
-          </li>
-
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/contact.html">
-              <span itemprop="name">お問い合わせ</span>
-            </a>
-            <meta itemprop="position" content="2" />
-          </li>
+          <div class="breadcrumbs" vocab="http://schema.org/" typeof="BreadcrumbList">
+            <?php if (function_exists('bcn_display')) {
+              bcn_display();
+            } ?>
+          </div>
         </ol>
       </div><!-- /.section-wrapper -->
     </section><!-- /.bread-list -->

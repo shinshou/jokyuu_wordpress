@@ -7,7 +7,7 @@
       <ul class="nav-list">
         <li class="nav-item1"><a href="<?php echo get_template_directory_uri(); ?>/index.html">ホーム</a></li>
         <li class="nav-item2"><a href="<?php echo  get_permalink(106); ?>">お知らせ</a></li>
-        <li class="nav-item3"><a href="<?php echo  get_permalink(106); ?>">ブログ</a></li>
+        <li class="nav-item3"><a href="<?php echo  get_permalink(115); ?>">ブログ</a></li>
         <li class="nav-item4"><a href="<?php echo  get_permalink(111); ?>">コース・料金</a></li>
       </ul><!-- /.nav-list -->
       <ul class="nav-list-r">
