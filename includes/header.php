@@ -15,7 +15,7 @@
     <nav class="header-nav">
       <ul class="nav-list">
         <?php foreach ($menu_items as $item) : ?>
-          <li class="nav-item1">
+          <li class="nav-item<?php echo esc_html($item->menu_order); ?>">
             <a href="<?php echo esc_url($item->url); ?>">
               <?php echo esc_html($item->title); ?>
             </a>
