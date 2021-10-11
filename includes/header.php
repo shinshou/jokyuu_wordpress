@@ -1,6 +1,6 @@
 <div class="header-inner">
   <h1 class="site-ttl">
-    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri(); ?>/asset/logo (2)@2x.png" alt="サイトロゴ"></a>
+    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/logo (2)@2x.png" alt="サイトロゴ"></a>
   </h1><!-- /.site-ttl -->
   <div class="nav-wrapper">
 
@@ -15,7 +15,11 @@
     <nav class="header-nav">
       <ul class="nav-list">
         <?php foreach ($menu_items as $item) : ?>
-          <li class="nav-item1"><a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a></li>
+          <li class="nav-item1">
+            <a href="<?php echo esc_url($item->url); ?>">
+              <?php echo esc_html($item->title); ?>
+            </a>
+          </li>
         <?php endforeach; ?>
       </ul><!-- /.nav-list -->
       <ul class="nav-list-r">
@@ -24,10 +28,10 @@
           <p><i class="fas fa-phone-alt"></i>0123-456-7890</p>
         </li>
         <li class="nav-item">
-          <a href="<?php echo  get_permalink(60); ?>">資料請求</a>
+          <a href="<?php echo  esc_url(get_permalink(60)); ?>">資料請求</a>
         </li>
         <li class="nav-item contact">
-          <a href="<?php echo  get_permalink(60); ?>">お問い合わせ</a>
+          <a href="<?php echo  esc_url(get_permalink(60)); ?>">お問い合わせ</a>
         </li>
       </ul><!-- /.nav-list-r -->
     </nav><!-- /.header-nav -->

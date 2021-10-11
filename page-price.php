@@ -75,9 +75,9 @@
               <p class="price">59,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->
@@ -89,10 +89,10 @@
               <p class="price">75,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->
@@ -104,11 +104,11 @@
               <p class="price">95,000円~</p><!-- /.price -->
               <p class="price-sub">*月額（税抜価格）</p><!-- /.price-sub -->
               <ul>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">カリキュラム作成</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
-                <li><img src="<?php echo get_template_directory_uri(); ?>/asset/check.png" alt="check">週一の英語面接対策</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">カリキュラム作成</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">TOEFL学習サポート</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">週一回のビデオMTG</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">月二回の模試（解説 付き）</li>
+                <li><img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/check.png" alt="check">週一の英語面接対策</li>
               </ul>
             </div><!-- /.price-list-inner -->
           </div><!-- /.price-list-content -->

@@ -63,7 +63,7 @@
                     <p>
                       <?php
                       $category = get_the_category();
-                      echo $category[0]->cat_name;
+                      echo esc_html($category[0]->cat_name);
                       ?>
                     </p>
                   </div><!-- /.blog-category -->
@@ -75,7 +75,7 @@
                     $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
                   endif;
                   ?>
-                  <img src="<?php echo $img[0]; ?>" alt="ブログアイキャッチ">
+                  <img src="<?php echo esc_url($img[0]); ?>" alt="ブログアイキャッチ">
                 </div><!-- /.blog-img -->
                 <div class="blog-content">
                   <p class="blog-date">
@@ -83,11 +83,11 @@
                   </p><!-- /.blog-date -->
                   <p class="blog-ttl">
                     <a href="<?php the_permalink(); ?>">
-                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
                     </a>
                   </p><!-- /.blog-ttl -->
                   <p class="blog-text">
-                    <?php echo wp_trim_words(the_excerpt(), 48, "…", "UTF-8"); ?>
+                    <?php echo esc_html(wp_trim_words(the_excerpt(), 48, "…", "UTF-8")); ?>
                   </p><!-- /.blog-text -->
                 </div><!-- /.blog-content -->
               </div><!-- /.blog-inner -->
@@ -106,25 +106,7 @@
     </section><!-- /#section-ul -->
     <!-- //section-ul -->
 
-    <section id="section-contact">
-      <div class="section-wrapper">
-        <div class="section-inner section-inner-contact">
-          <div class="contact-inner-form">
-            <h2 class="section-ttl">まずは無料で資料請求から</h2><!-- /.section-ttl -->
-            <a href="/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-            <a href="/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
-          </div>
-          <div class="contact-inner-tel">
-            <div class="inner-content">
-              <p class="contact-tel-text">お電話でのお問い合わせはこちら</p><!-- /.contact-tel-text -->
-              <p class="contact-tel-num">0123-456-7890</p><!-- /.contact-tel-num -->
-              <p class="contact-tel-date">平日 08:00~20:00</p><!-- /.contact-tel-date -->
-            </div><!-- /.inner-content -->
-          </div><!-- /.contact-inner-tel -->
-        </div><!-- /.section-inner section-inner-contact -->
-      </div><!-- /.section-wrapper -->
-    </section><!-- /#section-contact -->
-    <!-- //section-contact -->
+    <?php get_template_part('includes/footer_contact'); ?>
   </main>
   <!-- //main -->
 

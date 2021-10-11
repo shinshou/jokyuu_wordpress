@@ -40,11 +40,11 @@
           <div class="section-detail-blog-category">
             <?php
             $category = get_the_category();
-            echo $category[0]->cat_name;
+            echo esc_html($category[0]->cat_name);
             ?>
           </div><!-- /.section-detail-blog-category -->
           <h2 class="section-detail-blog-ttl">
-            <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+            <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
           </h2><!-- /.section-detail-blog-ttl -->
           <div class="blog-info">
             <div class="sns-link-inner">
@@ -64,7 +64,7 @@
               $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
             endif;
             ?>
-            <img class="blog-eyecatch" src="<?php echo $img[0]; ?>" alt="アイキャッチ画像">
+            <img class="blog-eyecatch" src="<?php echo esc_url($img[0]); ?>" alt="アイキャッチ画像">
             <div class="content">
               <?php the_content(); ?>
             </div><!-- /.content -->
@@ -93,7 +93,7 @@
                     <p>
                       <?php
                       $category = get_the_category();
-                      echo $category[0]->cat_name;
+                      echo esc_html($category[0]->cat_name);
                       ?>
                     </p>
                   </div><!-- /.blog-category -->
@@ -105,7 +105,7 @@
                     $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
                   endif;
                   ?>
-                  <img src="<?php echo $img[0]; ?>" alt="アイキャッチ画像">
+                  <img src="<?php echo esc_url($img[0]); ?>" alt="アイキャッチ画像">
                 </div><!-- /.blog-img -->
                 <div class="blog-content">
                   <p class="blog-date">
@@ -113,7 +113,7 @@
                   </p><!-- /.blog-date -->
                   <p class="blog-ttl">
                     <a href="<?php the_permalink(); ?>">
-                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
                     </a>
                   </p><!-- /.blog-ttl -->
                 </div><!-- /.blog-content -->
@@ -162,10 +162,10 @@
                     $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
                   endif;
                   ?>
-                  <img src="<?php echo $img[0]; ?>" alt="アイキャッチ画像">
+                  <img src="<?php echo esc_url($img[0]); ?>" alt="アイキャッチ画像">
                   <p>
                     <a href="<?php the_permalink(); ?>">
-                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
                     </a>
                   </p>
                 </div><!-- /.related-article-inner -->

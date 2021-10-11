@@ -23,8 +23,8 @@
       <div class="kv-content">
         <p class="kv-copy">TOEFL対策は<br>Engress</p><!-- /.kv-copy -->
         <p class="kv-copy-sub">日本人へのTOEFL指導歴豊かな講師陣の<br>コーチング型TOEFLスクール</p><!-- /.kv-copy-sub -->
-        <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-        <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
+        <a href="<?php echo esc_url(get_template_directory_uri()); ?>/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
+        <a href="<?php echo esc_url(get_template_directory_uri()); ?>/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
       </div><!-- /.kv-content -->
     </div><!-- /.kv-wrapper -->
     <!-- //key-visual -->
@@ -68,7 +68,7 @@
               <p class="feature-text-content">TOEFLではビジネス英語には登場しない数多くの学術的内容が出題されます。そのため、ベースとなる知識も必要になります。Engressでは過去1000題を分析し、最適なカリキュラムを組んでいます。</p><!-- /.feature-text-content -->
             </li><!-- /.feature-item -->
             <li class="feature-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/asset/feature01.png" alt="feature01">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/feature01.png" alt="feature01">
             </li><!-- /.feature-img -->
           </ul><!-- /.feature-list -->
 
@@ -79,7 +79,7 @@
               <p class="feature-text-content">Engressの講師陣は、もともと日本人向けにTOEFLを教えていた人が大多数です。また全メンバーがTESOL(英語教授法)を取得しており、知識と経験を兼ね備えている教育のプロフェッショナルです。</p><!-- /.feature-text-content -->
             </li><!-- /.feature-item -->
             <li class="feature-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/asset/feature02.png" alt="feature02">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/feature02.png" alt="feature02">
             </li><!-- /.feature-img -->
           </ul><!-- /.feature-list -->
 
@@ -90,7 +90,7 @@
               <p class="feature-text-content">Engressは高校生からサラリーマンまで様々な年齢層の方々が通われていますが、完全オーダーメイドのカリキュラムで柔軟に対応しているため、平均3ヶ月でTOEFLスコアを20点アップさせています。</p><!-- /.feature-text-content -->
             </li><!-- /.feature-item -->
             <li class="feature-img">
-              <img src="<?php echo get_template_directory_uri(); ?>/asset/feature03.png" alt="feature03">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/feature03.png" alt="feature03">
             </li><!-- /.feature-img -->
           </ul><!-- /.feature-list -->
         </div><!-- /.section-inner section-inner-feature -->
@@ -118,7 +118,7 @@
             <li class="jirei-item">
               <p class="jirei-text">TOEFL iBT 100点を突破してコロンビア大学大学院に進学できました！</p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/model01.png" alt="model01">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model01.png" alt="model01">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
                 <p class="jirei-genre-text">会社員</p><!-- /.jirei-genre-text -->
@@ -134,7 +134,7 @@
             <li class="jirei-item">
               <p class="jirei-text">半年でTOEFL 40点→100点を達成！コロンビア大学大学院に合格</p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/model02.png" alt="model02">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model02.png" alt="model02">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
                 <p class="jirei-genre-text">大学生</p><!-- /.jirei-genre-text -->
@@ -150,7 +150,7 @@
             <li class="jirei-item">
               <p class="jirei-text">早稲田大学 国際教養学部AO入試合格！TOEFL iBT 109点</p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/asset/model03.png" alt="model02">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model03.png" alt="model02">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
                 <p class="jirei-genre-text">高校生</p><!-- /.jirei-genre-text -->
@@ -251,7 +251,7 @@
                       <p>
                         <?php
                         $category = get_the_category();
-                        echo $category[0]->cat_name;
+                        echo esc_html($category[0]->cat_name);
                         ?>
                       </p>
                     </div><!-- /.blog-category -->
@@ -263,10 +263,10 @@
                       $img = array(get_template_directory_uri() . '/asset/blog@2x.png');
                     endif;
                     ?>
-                    <img src="<?php echo $img[0]; ?>" alt="">
+                    <img src="<?php echo esc_url($img[0]); ?>" alt="">
                     <div class="blog-item-content">
-                      <a href="<?php the_permalink(); ?>" class="blog-item-text ">
-                        <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      <a href="<?php esc_url(the_permalink()); ?>" class="blog-item-text ">
+                        <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
                       </a><!-- /.blog-item-text -->
                       <p class="blog-item-date">
                         <?php the_time(get_option('date_format')); ?>
@@ -295,7 +295,7 @@
                       <?php the_time(get_option('date_format')); ?>
                     </p><!-- /.news-item-date -->
                     <a href="<?php the_permalink(); ?>" class="news-item-text">
-                      <?php echo wp_trim_words(get_the_title(), 48, "…", "UTF-8"); ?>
+                      <?php echo esc_html(wp_trim_words(get_the_title(), 48, "…", "UTF-8")); ?>
                     </a><!-- /.news-item-text -->
                   </div><!-- /.news-item-inner -->
                 <?php endwhile; ?>
