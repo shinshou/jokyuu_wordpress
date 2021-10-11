@@ -2393,6 +2393,32 @@ section.anchor {
   #section-ul .section-inner-ul-blog .blog-inner .blog-img img {
     width: 100%;
   }
+
+  #section-detail-blog .section-inner-detail-blog .blog-eyecatch {
+    height: 200px;
+  }
+
+  #section-detail-blog .section-inner-detail-blog .blog-inner {
+    width: 270px;
+  }
+
+  #section-detail-blog .section-inner-detail-blog .blog-inner .blog-img img{
+    width: 100px;
+    height: 70px;
+  }
+
+  #section-detail-blog .section-inner-detail-blog .blog-inner .blog-content {
+    width: 152px;
+    margin-left: 0;
+  }
+
+  #section-detail-blog .section-inner-detail-blog .blog-inner .blog-content .blog-date {
+    font-size: 12px;
+  }
+
+  #section-detail-blog .section-inner-detail-blog .blog-inner .blog-content .blog-ttl {
+    font-size: 1.4rem;
+  }
 }
 
 
