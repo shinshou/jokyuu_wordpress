@@ -116,50 +116,50 @@
           <h2 class="section-ttl">TOEFL成功事例</h2><!-- /.section-ttl -->
           <ul class="jirei-list">
             <li class="jirei-item">
-              <p class="jirei-text">TOEFL iBT 100点を突破してコロンビア大学大学院に進学できました！</p><!-- /.jirei-text -->
+              <p class="jirei-text"><?php the_field('heading1'); ?></p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model01.png" alt="model01">
+                <img src="<?php the_field('img1'); ?>" alt="model01">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
-                <p class="jirei-genre-text">会社員</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('works1'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre -->
               <div class="jirei-genre2">
-                <p class="jirei-genre-text">T.Fujiyamaさん</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('name1'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre2 -->
               <div class="jirei-genre3">
-                <p class="jirei-genre-text">3ヶ月でTOEFL80→108点</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('explain1'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre3 -->
             </li><!-- /.jirei-item -->
 
             <li class="jirei-item">
-              <p class="jirei-text">半年でTOEFL 40点→100点を達成！コロンビア大学大学院に合格</p><!-- /.jirei-text -->
+              <p class="jirei-text"><?php the_field('heading2'); ?></p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model02.png" alt="model02">
+                <img src="<?php the_field('img2'); ?>" alt="model01">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
-                <p class="jirei-genre-text">大学生</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('works2'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre -->
               <div class="jirei-genre2">
-                <p class="jirei-genre-text">Y.Takiyamaさん</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('name2'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre2 -->
               <div class="jirei-genre3">
-                <p class="jirei-genre-text">6ヶ月でTOEFL40→100点</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('explain2'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre3 -->
             </li><!-- /.jirei-item -->
 
             <li class="jirei-item">
-              <p class="jirei-text">早稲田大学 国際教養学部AO入試合格！TOEFL iBT 109点</p><!-- /.jirei-text -->
+              <p class="jirei-text"><?php the_field('heading3'); ?></p><!-- /.jirei-text -->
               <div class="jirei-img">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/asset/model03.png" alt="model02">
+                <img src="<?php the_field('img3'); ?>" alt="model01">
               </div><!-- /.jirei-img -->
               <div class="jirei-genre1">
-                <p class="jirei-genre-text">高校生</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('works3'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre -->
               <div class="jirei-genre2">
-                <p class="jirei-genre-text">M.Yamadaさん</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('name3'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre2 -->
               <div class="jirei-genre3">
-                <p class="jirei-genre-text">5ヶ月でTOEFL68→109点</p><!-- /.jirei-genre-text -->
+                <p class="jirei-genre-text"><?php the_field('explain3'); ?></p><!-- /.jirei-genre-text -->
               </div><!-- /.jirei-genre3 -->
             </li><!-- /.jirei-item -->
           </ul><!-- /.jirei-list -->
@@ -243,9 +243,18 @@
           <div class="section-inner section-inner-blog">
             <h2 class="section-ttl">ブログ</h2><!-- /.section-ttl -->
             <div class="blog-item">
-              <?php if (have_posts()) : ?>
-                <?php query_posts('posts_per_page=3'); ?>
-                <?php while (have_posts()) : the_post(); ?>
+              <?php
+              $paged = (int) get_query_var('paged');
+              $wp_query = new WP_Query();
+              $my_posts = array(
+                'post_type' => 'post', //カテゴリは特定せず
+                'posts_per_page' => '2', //とりあえず3件
+                'paged' => $paged,
+                'order' => 'ASC' // 昇順
+              );
+              $wp_query->query($my_posts);
+              if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+              ?>
                   <div class="blog-item-img">
                     <div class="blog-category">
                       <p>
@@ -275,8 +284,9 @@
                   </div><!-- /.blog-item-img -->
                 <?php endwhile; ?>
               <?php else : ?>
-                <p>記事が見つかりませんでした。</p>
+                <p>記事が見つかりませんでした</p>
               <?php endif; ?>
+              <?php wp_reset_postdata(); ?>
             </div><!-- /.blog-item -->
           </div><!-- /.section-inner section-inner-blog -->
         </section><!-- /.section-blog -->
@@ -288,8 +298,18 @@
             <h2 class="section-ttl">お知らせ</h2><!-- /.section-ttl -->
             <div class="news-item">
 
-              <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
+              <?php
+              $paged = (int) get_query_var('paged');
+              $wp_query = new WP_Query();
+              $my_posts = array(
+                'post_type' => 'latest_news', //カテゴリは特定せず
+                'posts_per_page' => '3', //とりあえず3件
+                'paged' => $paged,
+                'order' => 'ASC' // 昇順
+              );
+              $wp_query->query($my_posts);
+              if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+              ?>
                   <div class="news-item-inner">
                     <p class="news-item-date">
                       <?php the_time(get_option('date_format')); ?>
@@ -302,6 +322,7 @@
               <?php else : ?>
                 <p>記事が見つかりませんでした</p>
               <?php endif; ?>
+              <?php wp_reset_postdata(); ?>
             </div><!-- /.news-item -->
           </div><!-- /.section-inner section-inner-news -->
         </section><!-- /#section-news -->

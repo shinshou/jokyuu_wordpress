@@ -3,27 +3,22 @@
   <div class="section-wrapper">
     <div class="footer-inner">
       <div class="footer-list">
+        <?php
+        //メニューIDを取得する
+        $menu_name = 'global_nav';
+        $locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        ?>
         <ul class="footer-list-item">
-          <li class="list-text">
-            <a href="<?php echo esc_url(home_url()); ?>">
-              ホーム
-            </a>
-          </li><!-- /.list-text -->
-          <li class="list-text">
-            <a href="<?php echo  esc_url(get_permalink(106)); ?>">
-              お知らせ
-            </a>
-          </li><!-- /.list-text -->
-          <li class="list-text">
-            <a href="<?php echo esc_url(get_permalink(115)); ?>">
-              ブログ
-            </a>
-          </li><!-- /.list-text -->
-          <li class="list-text">
-            <a href="<?php echo esc_url(get_permalink(111)); ?>">
-              コース・料金
-            </a>
-          </li><!-- /.list-text -->
+          <?php foreach ($menu_items as $item) : ?>
+            <li class="list-text">
+              <a href="<?php echo esc_url($item->url); ?>">
+                <?php echo esc_html($item->title); ?>
+              </a>
+            </li><!-- /.list-text -->
+          <?php endforeach; ?>
         </ul><!-- /.footer-list-item -->
       </div><!-- /.footer-list -->
       <div class="footer-content">

@@ -61,13 +61,60 @@ li {
   list-style: none;
 }
 
+/*ページネーションの設定*/
+#section-ul .pagination {
+  text-align: center;
+}
+
+#section-ul a.prev.page-numbers,
+#section-ul a.next.page-numbers {
+  display: none;
+}
+
+span.page-numbers.current {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background-color: #1B224C;
+  color: #FFF;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+a.page-numbers {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border: 0px;
+  border: 1px solid #1B224C;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+span.page-numbers.dots {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*改行幅を指定*/
 .content p {
-  margin: 0 0 1.6em;
+  margin: 20px 20px 1.6em;
   line-height: 1.5;
 }
 
 /*リストスタイルを指定*/
+.content ul,.content ol{
+  margin-top: 30px;
+  margin-bottom: 30px;
+} 
+
 .content ul li {
   position: relative;
 }
@@ -1211,47 +1258,6 @@ section.anchor {
   white-space: wrap;
 }
 
-#section-ul .section-inner-ul-blog .pagination{
-  text-align: center;
-}
-
-#section-ul .section-inner-ul-blog a.prev.page-numbers,
-#section-ul .section-inner-ul-blog a.next.page-numbers {
-  display: none;
-}
-
-span.page-numbers.current {
-  display: flex;
-  height: 50px;
-  width: 50px;
-  background-color: #1B224C;
-  color: #FFF;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-}
-
-a.page-numbers {
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border: 0px;
-  border: 1px solid #1B224C;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
-}
-
-span.page-numbers.dots {
-  display: flex;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #section-ul .section-inner-ul-news {
   margin-top: 45px;
 }
@@ -1517,8 +1523,17 @@ span.page-numbers.dots {
   text-align: right;
 }
 
+#section-detail-news .section-inner-detail-news h1 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
 #section-detail-news .section-inner-detail-news h2 {
   margin-top: 60px;
+  margin-bottom: 30px;
   color: #1b224c;
   font-weight: bold;
   font-size: 2.6rem;
@@ -1546,6 +1561,60 @@ span.page-numbers.dots {
   margin-right: 10px;
   background-color: #1b224c;
   content: "";
+}
+
+#section-detail-news .section-inner-detail-news h4 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+#section-detail-news .section-inner-detail-news h5 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+#section-detail-news .section-inner-detail-news h6 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+#section-detail-news .section-inner-detail-news table {
+  margin-top: 20px;
+  table-layout: auto;
+  width: 100%;
+}
+
+#section-detail-news .section-inner-detail-news thead {
+  border-bottom: 3px solid #1B224C;
+  height: 50px;
+}
+
+#section-detail-news .section-inner-detail-news th {
+  vertical-align: middle;
+}
+
+#section-detail-news .section-inner-detail-news tbody tr {
+  height: 50px;
+  border-bottom: 1px solid;
+}
+
+#section-detail-news .section-inner-detail-news tbody tr td {
+  vertical-align: middle;
+}
+
+#section-detail-news .section-inner-detail-news dl {
+  margin-top: 20px;
+}
+
+#section-detail-news .section-inner-detail-news dl dd {
+  margin: 20px 0;
+  margin-left: 20px;
 }
 
 #section-detail-news .section-inner-detail-news .quote-inner {
@@ -1687,6 +1756,7 @@ span.page-numbers.dots {
 
 #section-detail-blog .section-inner-detail-blog h1 {
   margin-top: 40px;
+  margin-bottom: 30px;
   color: #1b224c;
   font-weight: bold;
   font-size: 3.2rem;
@@ -1694,6 +1764,7 @@ span.page-numbers.dots {
 
 #section-detail-blog .section-inner-detail-blog h2 {
   margin-top: 40px;
+  margin-bottom: 30px;
   color: #1b224c;
   font-weight: bold;
   font-size: 2.6rem;
@@ -2308,6 +2379,19 @@ span.page-numbers.dots {
   }
   #section-ul .section-inner-ul-contact .contact-inner .privacy-policy {
     font-size: 1.2rem;
+  }
+
+  #section-detail-blog{
+    display:block;
+    width: 100%;
+  }
+
+  .section-wrapper-col2-2{
+    margin-top: 50px;
+  }
+
+  #section-ul .section-inner-ul-blog .blog-inner .blog-img img {
+    width: 100%;
   }
 }
 

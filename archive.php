@@ -85,7 +85,10 @@
 
               <!-- pager -->
             <?php endwhile; ?>
-            <?php next_posts_link(); ?>
+            <!-- ページネーション -->
+            <div class="pagination">
+              <?php the_posts_pagination(); ?>
+            </div><!-- /.pagination -->
           <?php else : ?>
             <p>記事が見つかりませんでした。</p>
           <?php endif; ?>
