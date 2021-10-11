@@ -23,8 +23,8 @@
       <div class="kv-content">
         <p class="kv-copy">TOEFL対策は<br>Engress</p><!-- /.kv-copy -->
         <p class="kv-copy-sub">日本人へのTOEFL指導歴豊かな講師陣の<br>コーチング型TOEFLスクール</p><!-- /.kv-copy-sub -->
-        <a href="<?php echo esc_url(get_template_directory_uri()); ?>/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-        <a href="<?php echo esc_url(get_template_directory_uri()); ?>/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
+        <a href="<?php echo  esc_url(get_permalink(60)); ?>" class="cta-btn">資料請求</a><!-- /.cta-btn -->
+        <a href="<?php echo  esc_url(get_permalink(60)); ?>" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
       </div><!-- /.kv-content -->
     </div><!-- /.kv-wrapper -->
     <!-- //key-visual -->
@@ -103,7 +103,7 @@
       <div class="section-wrapper">
         <div class="section-inner section-inner-price">
           <h2 class="section-ttl">Engressの料金プランはこちら</h2><!-- /.section-ttl -->
-          <a href="/price-list.html" class="cta-btn2">料金を見てみる</a><!-- /.cta-btn2 -->
+          <a href="<?php echo  esc_url(get_permalink(111)); ?>" class="cta-btn2">料金を見てみる</a><!-- /.cta-btn2 -->
         </div><!-- /.section-inner section-inner-price -->
       </div><!-- /.section-wrapper -->
     </section><!-- /#section-price -->

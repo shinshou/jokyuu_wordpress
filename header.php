@@ -42,6 +42,9 @@
 <!-- Aos.js読み込み -->
 <link href="//unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<link rel="stylesheet" href="//unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
+<script src="//unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
+
 <!-- css読み込み -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/reset.css">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">

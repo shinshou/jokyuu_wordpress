@@ -3,8 +3,8 @@
     <div class="section-inner section-inner-contact">
       <div class="contact-inner-form">
         <h2 class="section-ttl">まずは無料で資料請求から</h2><!-- /.section-ttl -->
-        <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="cta-btn">資料請求</a><!-- /.cta-btn -->
-        <a href="<?php echo get_template_directory_uri(); ?>/contact.html" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
+        <a href="<?php echo  esc_url(get_permalink(60)); ?>" class="cta-btn">資料請求</a><!-- /.cta-btn -->
+        <a href="<?php echo  esc_url(get_permalink(60)); ?>" class="contact-btn">お問い合わせ</a><!-- /.contact-btn -->
       </div>
       <div class="contact-inner-tel">
         <div class="inner-content">
