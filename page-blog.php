@@ -47,10 +47,12 @@
         <h2 class="section-ttl">新着一覧</h2><!-- /.section-ttl -->
         <div class="section-inner section-inner-ul-blog">
           <?php
+          $paged = (int) get_query_var('paged');
           $wp_query = new WP_Query();
           $my_posts = array(
             'post_type' => 'post', //カテゴリは特定せず
             'posts_per_page' => '10', //とりあえず100件
+            'paged' => $paged,
           );
           $wp_query->query($my_posts);
           if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
@@ -90,9 +92,11 @@
                 </div><!-- /.blog-content -->
               </div><!-- /.blog-inner -->
 
-              <!-- pager -->
             <?php endwhile; ?>
-            <?php next_posts_link(); ?>
+            <!-- ページネーション -->
+            <div class="pagination">
+              <?php the_posts_pagination(); ?>
+            </div><!-- /.pagination -->
           <?php else : ?>
             <p>記事が見つかりませんでした</p>
           <?php endif; ?>

@@ -79,7 +79,7 @@
             'meta_key' => 'post_views_count',
             'orderby' => 'meta_value_num',
             'order' => 'DESC',
-            'posts_per_page' => 5 // ← 5件取得
+            'posts_per_page' => 3 // ← 5件取得
           );
           // WP_Queryによるループ
           $query = new WP_Query($args);

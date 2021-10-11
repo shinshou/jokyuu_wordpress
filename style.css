@@ -23,6 +23,36 @@ img {
   vertical-align: bottom;
 }
 
+/* 画像配置 左 */
+img.alignleft {
+  margin: 10px;
+  display: inline;
+}
+
+/* 画像配置 中央 */
+img.aligncenter {
+  display: block;
+  margin: 1px auto;
+}
+
+/* 画像配置 右 */
+img.alignright {
+  margin: 10px;
+  display: inline;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -30,6 +60,96 @@ a {
 li {
   list-style: none;
 }
+
+/*改行幅を指定*/
+.content p {
+  margin: 0 0 1.6em;
+  line-height: 1.5;
+}
+
+/*リストスタイルを指定*/
+.content ul li {
+  position: relative;
+}
+
+.content li {
+  margin-left: 32px;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.content ul li:before {
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #f5a623;
+  content: "";
+}
+
+.content ol li {
+  list-style: decimal;
+}
+
+
+/*リンク色を指定*/
+.content a {
+  color: #F5A623;
+  text-decoration: underline;
+}
+
+h2.section-detail-blog-ttl {
+  word-break: break-all;
+}
+
+p.blog-ttl {
+  word-break: break-all;
+}
+
+.related-article-inner a {
+  word-break: break-all;
+}
+
+.breadcrumbs span[property="name"] {
+  display: inline-block;
+  padding: 0;
+  margin-top: -3px;
+  vertical-align: middle;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*コンテンツ内の文字色*/
+.content {
+  color: #1b224c;
+}
+
+/*preタグのマークアップ*/
+.content pre{
+  margin-bottom: 40px;
+  padding: 24px;
+  border: solid 1px #e2e5e8;
+  background-color: #f4f6fa;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/*kbdタグのマークアップ*/
+.content kbd{
+  padding: 2px 8px;
+  background-color: #000c15;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 25%);
+  color: #fff;
+}
+
 
 section.anchor {
   display: block;
@@ -1091,6 +1211,47 @@ section.anchor {
   white-space: wrap;
 }
 
+#section-ul .section-inner-ul-blog .pagination{
+  text-align: center;
+}
+
+#section-ul .section-inner-ul-blog a.prev.page-numbers,
+#section-ul .section-inner-ul-blog a.next.page-numbers {
+  display: none;
+}
+
+span.page-numbers.current {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background-color: #1B224C;
+  color: #FFF;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+a.page-numbers {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border: 0px;
+  border: 1px solid #1B224C;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+span.page-numbers.dots {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #section-ul .section-inner-ul-news {
   margin-top: 45px;
 }
@@ -1467,6 +1628,7 @@ section.anchor {
   font-weight: bold;
   font-size: 2.8rem;
   line-height: 1.5;
+  word-break: break-all;
 }
 
 #section-detail-blog .blog-info {
@@ -1523,6 +1685,13 @@ section.anchor {
   object-fit: cover;
 }
 
+#section-detail-blog .section-inner-detail-blog h1 {
+  margin-top: 40px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
 #section-detail-blog .section-inner-detail-blog h2 {
   margin-top: 40px;
   color: #1b224c;
@@ -1552,6 +1721,59 @@ section.anchor {
   margin-right: 10px;
   background-color: #1b224c;
   content: "";
+}
+
+#section-detail-blog .section-inner-detail-blog h4 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+#section-detail-blog .section-inner-detail-blog h5 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+#section-detail-blog .section-inner-detail-blog h6 {
+  margin-top: 33px;
+  color: #1b224c;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+#section-detail-blog .section-inner-detail-blog table {
+  margin-top: 20px;
+  table-layout: auto;
+  width: 100%;
+}
+#section-detail-blog .section-inner-detail-blog thead {
+  border-bottom: 3px solid #1B224C;
+  height: 50px;
+}
+
+#section-detail-blog .section-inner-detail-blog th {
+  vertical-align: middle;
+}
+
+#section-detail-blog .section-inner-detail-blog tbody tr {
+  height: 50px;
+  border-bottom: 1px solid;
+}
+
+#section-detail-blog .section-inner-detail-blog tbody tr td {
+  vertical-align: middle;
+}
+
+#section-detail-blog .section-inner-detail-blog dl {
+  margin-top: 20px;
+}
+
+#section-detail-blog .section-inner-detail-blog dl dd {
+  margin: 20px 0;
+  margin-left: 20px;
 }
 
 #section-detail-blog .section-inner-detail-blog .quote-inner {

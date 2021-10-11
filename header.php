@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
 
-<title><?php the_title(); ?></title>
+
 
 <meta name="title" content="Engress">
 <meta name="description" content="日本人へのTOEFL指導歴豊かな講師陣のコーチング型TOEFLスクール">

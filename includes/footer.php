@@ -4,10 +4,10 @@
     <div class="footer-inner">
       <div class="footer-list">
         <ul class="footer-list-item">
-          <li class="list-text"><a href="<?php echo get_template_directory_uri(); ?>/index.html">ホーム</a></li><!-- /.list-text -->
-          <li class="list-text"><a href="<?php echo get_template_directory_uri(); ?>/news.html">お知らせ</a></li><!-- /.list-text -->
-          <li class="list-text"><a href="<?php echo get_template_directory_uri(); ?>/blog.html">ブログ</a></li><!-- /.list-text -->
-          <li class="list-text"><a href="<?php echo get_template_directory_uri(); ?>/price-list.html">コース・料金</a></li><!-- /.list-text -->
+          <li class="list-text"><a href="<?php echo esc_url(home_url()); ?>">ホーム</a></li><!-- /.list-text -->
+          <li class="list-text"><a href="<?php echo  get_permalink(106); ?>">お知らせ</a></li><!-- /.list-text -->
+          <li class="list-text"><a href="<?php echo  get_permalink(115); ?>">ブログ</a></li><!-- /.list-text -->
+          <li class="list-text"><a href="<?php echo  get_permalink(111); ?>">コース・料金</a></li><!-- /.list-text -->
         </ul><!-- /.footer-list-item -->
       </div><!-- /.footer-list -->
       <div class="footer-content">
